@@ -4,7 +4,7 @@ import './app.css';
 
 // Socket.IO bağlantı URL'sini ortama göre ayarla
 const SOCKET_URL = import.meta.env.PROD 
-  ? 'https://chat-app-backend-yvqw.onrender.com' // Render.com'daki backend URL'iniz
+  ? 'https://chat-app-1-tas1.onrender.com' // Render.com backend URL'i
   : 'http://localhost:3001';
 
 const socket = io(SOCKET_URL);
