@@ -9,10 +9,7 @@ app.use(cors());
 
 const io = new Server(server, {
   cors: {
-    // Production ve development için dinamik origin
-    origin: process.env.NODE_ENV === 'production' 
-      ? ['https://your-app-name.vercel.app'] // Vercel'de yayınladıktan sonra buraya frontend URL'nizi yazın
-      : "http://localhost:5173",
+    origin: "*",  // Tüm originlere izin ver
     methods: ["GET", "POST"]
   }
 });
