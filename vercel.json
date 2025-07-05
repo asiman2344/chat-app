@@ -1,14 +1,12 @@
 {
-  "buildCommand": "cd chatapp && npm install && npm run build",
-  "outputDirectory": "chatapp/dist",
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/socket.io/(.*)",
-      "destination": "/api/socket.io"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
+      "src": "chatapp",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ]
 } 
