@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import './app.css';
 
-// Socket.IO bağlantısını aynı domain üzerinden yap
-const socket = io({
-  path: '/api/socket.io'
-});
+// Socket.IO bağlantı URL'sini ortama göre ayarla
+const SOCKET_URL = import.meta.env.PROD 
+  ? 'https://chat-app-backend-yvqw.onrender.com' // Render.com'daki backend URL'iniz
+  : 'http://localhost:3001';
+
+const socket = io(SOCKET_URL);
 
 function App() {
   const [mesaj, setMesaj] = useState('');
